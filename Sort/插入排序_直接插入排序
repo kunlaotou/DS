@@ -5,10 +5,9 @@ using namespace std;
 
 //直接插入排序 
 void DirectInsertSort(int sortNum[], int n){	
-	for(int i = 1; i < n - 1; i++){
-    //开始进行单趟排序
-		int end = i;                  //在待排序数组的下标end之前的元素都是有序的 
-		int tmp = sortNum[end + 1];   //tmp代表无序序列的第一个元素 
+	for(int i = 1; i < n; i++){
+		int end = i - 1;                  //在待排序数组的下标end之前的元素都是有序的 
+		int tmp = sortNum[i];   //tmp代表无序序列的第一个元素 
 		while(end >= 0){
 			if(sortNum[end] > tmp){
 				sortNum[end + 1] = sortNum[end];
