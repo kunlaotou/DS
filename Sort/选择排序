@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cstring>
+#include<cstdio>
+#define  N  500
+using namespace std;
+int a[N], n;
+
+void swap(int* a, int* b){
+	//建立临时空间，进行交换
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int main(){ 
+    cin>>n;
+	for(int i = 1; i <=n ; i++)
+    	cin>>a[i];
+	for(int i = 1; i < n; i++)
+	{
+    	int tmp = i;
+    	for(int j = i + 1; j <= n; j++)
+    	{
+        	if(a[j] < a[tmp]) tmp = j;
+		}
+		swap(a[i], a[tmp]);
+	}
+	for(int i = 1; i<= n; i++)  cout<<a[i]<< " "; 
+	cout<<endl;
+	return 0;
+}
